@@ -1,0 +1,38 @@
+body{
+  text-align: center !important;
+}
+.container{
+  width:70%;
+  text-align:center;
+  margin-top:30px;
+}
+.box {
+  border: 1px solid;
+  height:2rem;
+  border-radius:5px;
+  margin:5px;
+}
+
+
+.keyboard{
+  position:fixed;
+  left:5%;
+  bottom:5px;
+  background:#004134;
+  border-radius:25px;
+  width:90%;
+  text-align:center !important;
+}
+.keys{
+  background:#004134;
+  box-shadow:0 0 50px rgba(0, 0, 0, 0.5);
+  text-align:center;
+  padding:10px;
+  border-radius: 5px;
+  font-size:1.25rem;
+
+}
+button{
+  margin-bottom:5px;
+  width:7%;
+}
