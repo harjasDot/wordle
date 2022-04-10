@@ -18,11 +18,11 @@ body{
 .keyboard{
   z-index:-1;
   position:fixed;
-  left:5%;
+
   bottom:5px;
   background:#004134;
   border-radius:25px;
-  width:90%;
+  width:100%;
   text-align:center !important;
 }
 .keys{
@@ -68,22 +68,11 @@ button{
   }
   button{
    width:auto;
+   padding:3px;
   }
 }
 
 @media only screen and (max-width: 425px) {
-  .box {
-    height:4.15rem;
-  }
-  .keys{
-    font-size:1rem;
-  }
-  button{
-   width:auto%;
-  }
-}
-
-@media only screen and (max-width: 320px) {
   .box {
     height:4rem;
   }
@@ -91,6 +80,32 @@ button{
     font-size:1rem;
   }
   button{
-   width:auto;
+   width:70px;
+  }
+}
+@media only screen and (max-width: 375px) {
+  .box {
+    height:2.75rem;
+    font-size:12px;
+    margin:2px;
+  }
+  .keys{
+    font-size:1rem;
+  }
+  button{
+   width:60px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .box {
+    height:3rem;
+    font-size:10px;
+    margin:2px;
+  }
+  .keys{
+    font-size:0.75rem;
+  }
+  button{
+   width:60px;
   }
 }
