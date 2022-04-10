@@ -3,14 +3,17 @@ let play=1;
 let enter=0;
 let backPermi=1;
 let special_play=0;
-let ans;
+let ans,myword;
 let chance=1;
+let fail=1;
+let entCount=0;
 answer();
 function front(txt) {
-  if(count==7 || count==13 || count==19 || count==25 || count==31 )
+  if(count==7 || count==13 || count==19 || count==25 || count==31 || count==37)
   {
     play=0;
     backPermi=0;
+
   }
   else{
     play=1;
@@ -22,28 +25,85 @@ function front(txt) {
   count=count+1;
   enter=0;
   special_play=0;
+ }
+
+ if (count>37){
+   count=37;
+ }
 }
+function specialBack(count){
+  if(entCount==0){
+    if(count==7){
+        document.getElementById(count-1).innerHTML = "";
+        backPermi=1;
+    }
+  }
+  else if(entCount==1){
+    if(count==13){
+        document.getElementById(count-1).innerHTML = "";
+        backPermi=1;
+    }
+  }
+  else if(entCount==2){
+    if(count==19){
+        document.getElementById(count-1).innerHTML = "";
+        backPermi=1;
+    }
+  }
+  else if(entCount==3){
+    if(count==25){
+        document.getElementById(count-1).innerHTML = "";
+        backPermi=1;
+    }
+  }
+  else if(entCount==4){
+    if(count==31){
+        document.getElementById(count-1).innerHTML = "";
+        backPermi=1;
+    }
+  }
+  else if(entCount==5){
+    if(count==37){
+        document.getElementById(count-1).innerHTML = "";
+        backPermi=1;
+    }
+  }
 }
 
 function back() {
-  if(count==7 || count==13 || count==19 || count==25 || count==31 )
+  if(count==7 || count==13 || count==19 || count==25 || count==31 || count==37 )
   {
     special_play=1;
     backPermi=0;
+    specialBack(count);
+  }
+  else{
+    console.log("hi");
   }
   if(count>1 && backPermi==1){
   count=count-1;
   document.getElementById(count).innerHTML = "";
-}
+ }
+ if (count>37){
+   count=37;
+ }
 }
 
 
 function ent() {
-  if(count==7 || count==13 || count==19 || count==25 || count==31 )
+  if(count==7 || count==13 || count==19 || count==25 || count==31 || count==37)
   {
+    entCount=entCount+1;
     enter=1;
-    console.log(count)
+    //console.log(count)
     check(count);
+    color(count);
+    if(count==37 && fail==1){
+      over();
+    }
+  }
+  if (count>37){
+    count=37;
   }
 
 
@@ -73,15 +133,50 @@ function check(count){
   myword_caps=myword_arry.join("");
   myword=myword_caps.toLowerCase();
   if(myword==ans){
+    fail=0;
     win();
   }
   else{
     chance=chance+1;
   }
-
-
 }
 
 function win(){
   alert("you win");
+}
+
+function over(){
+  alert("over");
+}
+
+
+function color(count)
+{
+  count=count-1;
+  a=0;
+  for (let i = count-6; i < count; i++)
+  {
+  k=i+1;
+  var element = document.getElementById("0"+k);
+  console.log(i);
+  pos=ans.search(myword[a]);
+  if(myword[a]==ans[a] )
+  {
+    element.classList.add("green");
+    document.getElementById(myword_caps[a]).classList.add("green");
+
+  }
+  else if(myword[a]!=ans[a] && pos==-1){
+    element.classList.add("red");
+    document.getElementById(myword_caps[a]).classList.add("red");
+  }
+  else if(myword[a]!=ans[a] && pos!=-1){
+    element.classList.add("yellow");
+    document.getElementById(myword_caps[a]).classList.add("yellow");
+  }
+  a=a+1
+
+
+
+  }
 }

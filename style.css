@@ -1,5 +1,6 @@
 body{
   text-align: center !important;
+  font-weight: bold !important;
 }
 .container{
   width:70%;
@@ -15,6 +16,7 @@ body{
 
 
 .keyboard{
+  z-index:-1;
   position:fixed;
   left:5%;
   bottom:5px;
@@ -30,9 +32,65 @@ body{
   padding:10px;
   border-radius: 5px;
   font-size:1.25rem;
-
 }
 button{
   margin-bottom:5px;
-  width:7%;
+ width:9%;
+}
+/* box colors */
+.green{
+  background:green;
+}
+.red{
+  background:red;
+}
+.yellow{
+  background:yellow;
+}
+
+/* win and loose */
+.winBox{
+  z-index=2;
+  position:fixed;
+  left:25%;
+  width:50%;
+  text-align:center;
+  border-radius: 10px;
+  background:url("https://images.unsplash.com/photo-1614850523060-8da1d56ae167?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bGlnaHQlMjBjb2xvdXJ8ZW58MHx8MHx8&w=1000&q=80");
+  font-size:1.2rem;
+  padding:15px;
+  height:400px;
+}
+/* responsive */
+@media only screen and (max-width: 768px) {
+  .box {
+    height:2.5rem;
+  }
+  button{
+   width:auto;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .box {
+    height:4.15rem;
+  }
+  .keys{
+    font-size:1rem;
+  }
+  button{
+   width:auto%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .box {
+    height:4rem;
+  }
+  .keys{
+    font-size:1rem;
+  }
+  button{
+   width:auto;
+  }
 }
