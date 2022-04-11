@@ -7,15 +7,13 @@ let ans,myword;
 let chance=1;
 let fail=1;
 let entCount=0;
-let tCount=0;
-let lCount=0;
-let wCount=0;
+let tCount,lCount,wCount;
 let flag=false;
-let array;
-let a1=0;
-let a2=0;
-let a3=0;
+
 if(document.cookie.length==0){
+  tCount=0;
+  lCount=0;
+  wCount=0;
   setCookie();
   getCookie();
 }
@@ -199,16 +197,16 @@ function check(count){
 }
 
 function win(){
-  a2[8]=a2[8]+1
-  a3[10]=a3[10]+1;
+  tCount=tCount+1;
+  wCount=wCount+1;
   alert("you win");
   setCookie();
   getCookie();
 }
 
 function over(){
-  a2[8]=a2[8]+1;
-  a1[11]=a1[11]+1;
+  tCount=tCount+1;
+  lCount=lCount+1;
   alert("over/ word was"+ans);
   setCookie();
   getCookie();
@@ -252,8 +250,5 @@ function setCookie()
 function getCookie()
 {
   var array=document.cookie.split(";");
-  a1=array[0];
-  a2=array[1];
-  a3=array[2];
-  alert("looseCount="+a1[11] +"totalCount="+ a2[8]+ "winCount="+a3[10]);
+  alert("looseCount="+lCount +"totalCount="+ tCount+ "winCount="+wCount);
 }
