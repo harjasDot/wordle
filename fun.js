@@ -11,6 +11,10 @@ let tCount=0;
 let lCount=0;
 let wCount=0;
 let flag=false;
+let array,a1,a2,a3
+if(document.cookie.length==0){
+  setCookie();
+}
 answer();
 function front(txt) {
   if(count==7 || count==13 || count==19 || count==25 || count==31 || count==37)
@@ -191,16 +195,16 @@ function check(count){
 }
 
 function win(){
-  tCount=tCount+1;
-  wCount=wCount+1;
+  a2[8]=a2[8]+1
+  a3[10]=a3[10]+1;
   alert("you win");
   setCookie();
   getCookie();
 }
 
 function over(){
-  tCount=tCount+1;
-  lCount=lCount+1;
+  a2[8]=a2[8]+1;
+  a1[11]=a1[11]+1;
   alert("over/ word was"+ans);
   setCookie();
   getCookie();
