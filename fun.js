@@ -14,6 +14,7 @@ let flag=false;
 let array,a1,a2,a3
 if(document.cookie.length==0){
   setCookie();
+  getCookie();
 }
 answer();
 function front(txt) {
