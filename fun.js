@@ -188,9 +188,12 @@ function color(count){
 //cookies
 function setCookie()
 {
-  document.cookie="totalCount="+ tCount +";max-age=2147483647";
-  document.cookie="winCount="+ wCount + ";max-age=2147483647";
-  document.cookie="looseCount="+ lCount + ";max-age=2147483647";
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie="totalCount="+ tCount +";" + expires + ";path=/";
+  document.cookie="winCount="+ wCount + ";" + expires + ";path=/";
+  document.cookie="looseCount="+ lCount + ";" + expires + ";path=/";
 }
 function getCookie()
 {
