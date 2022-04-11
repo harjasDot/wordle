@@ -194,13 +194,16 @@ function win(){
   tCount=tCount+1;
   wCount=wCount+1;
   alert("you win");
+  setCookie();
+  getCookie();
 }
 
 function over(){
   tCount=tCount+1;
   lCount=lCount+1;
-  alert("over/ word was");
-  alert(ans);
+  alert("over/ word was"+ans);
+  setCookie();
+  getCookie();
 }
 
 function color(count){
@@ -244,5 +247,5 @@ function getCookie()
   a1=array[0];
   a2=array[1];
   a3=array[2];
-  alert("tCount="+a1[11] +"winCount="+ a2[8]+ "looseCount="+a3[10]);
+  alert("looseCount="+a1[11] +"totalCount="+ a2[8]+ "winCount="+a3[10]);
 }
