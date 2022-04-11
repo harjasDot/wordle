@@ -62,17 +62,17 @@ button{
   height:400px;
 }
 /* responsive */
-@media only screen and (max-width: 768px) {
+ @media only screen and (max-width: 800px) {
   .box {
     height:2.5rem;
   }
   button{
    width:auto;
-   padding:3px;
+   padding:13px;
   }
 }
-
-@media only screen and (max-width: 425px) {
+/*
+@media only screen and (max-width: 470px) {
   .box {
     height:4rem;
   }
@@ -82,8 +82,8 @@ button{
   button{
    width:70px;
   }
-}
-@media only screen and (max-width: 375px) {
+} */
+@media only screen and (max-width: 495px) {
   .box {
     height:2.75rem;
     font-size:12px;
@@ -94,6 +94,7 @@ button{
   }
   button{
    width:60px;
+   padding:5px;
   }
 }
 @media only screen and (max-width: 320px) {
@@ -107,5 +108,6 @@ button{
   }
   button{
    width:60px;
+   padding:auto;
   }
 }
