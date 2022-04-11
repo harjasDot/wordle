@@ -7,6 +7,9 @@ let ans,myword;
 let chance=1;
 let fail=1;
 let entCount=0;
+let tCount=0;
+let lCount=0;
+let wCount=0;
 answer();
 function front(txt) {
   if(count==7 || count==13 || count==19 || count==25 || count==31 || count==37)
@@ -31,6 +34,7 @@ function front(txt) {
    count=37;
  }
 }
+
 function specialBack(count){
   if(entCount==0){
     if(count==7){
@@ -89,7 +93,6 @@ function back() {
  }
 }
 
-
 function ent() {
   if(count==7 || count==13 || count==19 || count==25 || count==31 || count==37)
   {
@@ -127,6 +130,7 @@ function answer(){
   ans=list[n];
 
 }
+
 function check(count){
   count=count-1;
   myword_arry=[document.getElementById(count-5).innerHTML,document.getElementById(count-4).innerHTML,document.getElementById(count-3).innerHTML,document.getElementById(count-2).innerHTML,document.getElementById(count-1).innerHTML,document.getElementById(count).innerHTML];
@@ -142,16 +146,18 @@ function check(count){
 }
 
 function win(){
+  tCount=tCount+1;
+  wCount=wCount+1;
   alert("you win");
 }
 
 function over(){
+  tCount=tCount+1;
+  lCount=lCount+1;
   alert("over");
 }
 
-
-function color(count)
-{
+function color(count){
   count=count-1;
   a=0;
   for (let i = count-6; i < count; i++)
@@ -180,13 +186,14 @@ function color(count)
 
 
 //cookies
-let win_count=0;
 function setCookie()
 {
-  document.cookie="winCount=ll";
+  document.cookie="totalCount="+ tCount;
+  document.cookie="winCount="+ wCount;
+  document.cookie="looseCount="+ lCount;
 }
 function getCookie()
 {
   var array=document.cookie.split("=");
-  alert("Name="+array[0]+" "+"Value="+array[1]);
+  alert("Name="+array[0]+" "+"Value="+array[1] "Name="+array[2]+" "+"Value="+array[3] "Name="+array[4]+" "+"Value="+array[5]);
 }
