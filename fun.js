@@ -175,8 +175,18 @@ function color(count)
     document.getElementById(myword_caps[a]).classList.add("yellow");
   }
   a=a+1
-
-
-
   }
+}
+
+
+//cookies
+let win_count=0;
+function setCookie()
+{
+  document.cookie="winCount=ll";
+}
+function getCookie()
+{
+  var array=document.cookie.split("=");
+  alert("Name="+array[0]+" "+"Value="+array[1]);
 }
