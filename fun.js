@@ -164,7 +164,7 @@ function color(count){
   {
   k=i+1;
   var element = document.getElementById("0"+k);
-  console.log(i);
+  //console.log(i);
   pos=ans.search(myword[a]);
   if(myword[a]==ans[a] )
   {
