@@ -10,6 +10,7 @@ let entCount=0;
 let tCount=0;
 let lCount=0;
 let wCount=0;
+let flag=false;
 answer();
 function front(txt) {
   if(count==7 || count==13 || count==19 || count==25 || count==31 || count==37)
@@ -22,6 +23,25 @@ function front(txt) {
     play=1;
     backPermi=1;
   }
+  if(count==7 && entCount==1){
+    play=1;
+  }
+  else if(count==13 && entCount==2){
+    play=1;
+  }
+  else if(count==19 && entCount==3){
+    play=1;
+  }
+  else if(count==25 && entCount==4){
+    play=1;
+  }
+  else if(count==31 && entCount==5){
+    play=1;
+  }
+  else if(count==37 && entCount==6){
+    play=1;
+  }
+
 
   if(play==1 || enter==1 || special_play==1){
   document.getElementById(count).innerHTML = txt;
@@ -81,16 +101,41 @@ function back() {
     backPermi=0;
     specialBack(count);
   }
-  else{
-    console.log("hi");
+  else if(count==8 && entCount==1){
+    backPermi=1;
+    flag=true;
   }
-  if(count>1 && backPermi==1){
-  count=count-1;
-  document.getElementById(count).innerHTML = "";
- }
- if (count>37){
-   count=37;
- }
+  else if(count==14 && entCount==2){
+    backPermi=1;
+    flag=true;
+  }
+  else if(count==20 && entCount==3){
+    backPermi=1;
+    flag=true;
+  }
+  else if(count==26 && entCount==4){
+    backPermi=1;
+    flag=true;
+  }
+  else if(count==32 && entCount==5){
+    backPermi=1;
+    flag=true;
+  }
+
+ if(count>1 && backPermi==1 && flag==true){
+ count=count-1;
+ document.getElementById(count).innerHTML = "";
+ backPermi=0;
+ flag=false;
+}
+if(count>1 && backPermi==1){
+count=count-1;
+document.getElementById(count).innerHTML = "";
+}
+if (count>37){
+ count=37;
+}
+
 }
 
 function ent() {
@@ -154,7 +199,8 @@ function win(){
 function over(){
   tCount=tCount+1;
   lCount=lCount+1;
-  alert("over");
+  alert("over/ word was");
+  alert(ans);
 }
 
 function color(count){
@@ -188,13 +234,13 @@ function color(count){
 //cookies
 function setCookie()
 {
-  exdays=99999;
+  exdays=99;
   const d = new Date();
   d.setTime(d.getTime() + (exdays*24*60*60*1000));
   let expires = "expires="+ d.toUTCString();
-  document.cookie="totalCount="+ tCount +";" + expires + ";path=/";
-  document.cookie="winCount="+ wCount + ";" + expires + ";path=/";
-  document.cookie="looseCount="+ lCount + ";" + expires + ";path=/";
+  document.cookie="totalCount="+ tCount +";" + expires;
+  document.cookie="winCount="+ wCount + ";" + expires;
+  document.cookie="looseCount="+ lCount + ";" + expires;
 }
 function getCookie()
 {
