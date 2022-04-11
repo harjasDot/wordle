@@ -18,6 +18,13 @@ if(document.cookie.length==0){
   setCookie();
   getCookie();
 }
+else{
+  a=document.cookie.split("=")
+  a11=a[0]
+  a111=a11.split(";");
+  array1[1]=a111[0];
+  
+}
 answer();
 function front(txt) {
   if(count==7 || count==13 || count==19 || count==25 || count==31 || count==37)
