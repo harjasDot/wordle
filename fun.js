@@ -235,11 +235,14 @@ function color(count){
 function setCookie()
 {
   document.cookie="tCount="+tCount+"; expires=Fri, 31 Dec 9999 23:59:59 GMT";
-  document.cookie="winCount="+ wCount + "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
-  document.cookie="looseCount="+ lCount + "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+  document.cookie="winCount="+wCount+"; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+  document.cookie="looseCount="+lCount+"; expires=Fri, 31 Dec 9999 23:59:59 GMT";
 }
 function getCookie()
 {
-  var array=document.cookie.split("=");
-  alert(array[0] + array[1]+  array[2]+ array[3]+ array[4]+ array[5]);
+  var array=document.cookie.split(";");
+  a1=array[0];
+  a2=array[1];
+  a3=array[2];
+  alert("tCount="+a1[11] +"winCount="+ a2[8]+ "looseCount="+a3[10]);
 }
