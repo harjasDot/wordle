@@ -234,13 +234,9 @@ function color(count){
 //cookies
 function setCookie()
 {
-  exdays=99;
-  const d = new Date();
-  d.setTime(d.getTime() + (exdays*24*60*60*1000));
-  let expires = "expires="+ d.toUTCString();
-  document.cookie="totalCount="+ tCount +";" + expires;
-  document.cookie="winCount="+ wCount + ";" + expires;
-  document.cookie="looseCount="+ lCount + ";" + expires;
+  document.cookie="tCount="+tCount+"; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+  document.cookie="winCount="+ wCount + "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+  document.cookie="looseCount="+ lCount + "; expires=Fri, 31 Dec 9999 23:59:59 GMT";
 }
 function getCookie()
 {
