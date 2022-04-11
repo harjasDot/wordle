@@ -244,11 +244,11 @@ function color(count){
 function setCookie()
 {
   document.cookie="t="+tCount+"; expires=Fri, 31 Dec 9999 23:59:59 GMT";
-  document.cookie="w="+wCount+"; expires=Fri, 31 Dec 9999 23:59:59 GMT";
-  document.cookie="l="+lCount+"; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+  // document.cookie="w="+wCount+"; expires=Fri, 31 Dec 9999 23:59:59 GMT";
+  // document.cookie="l="+lCount+"; expires=Fri, 31 Dec 9999 23:59:59 GMT";
 }
 function getCookie()
 {
-  var array=document.cookie.split(";");
-  alert("looseCount="+lCount +"totalCount="+ tCount+ "winCount="+wCount);
+  var array=document.cookie.split("=");
+  alert("looseCount="+array[1] +"totalCount="+ tCount+ "winCount="+wCount);
 }
