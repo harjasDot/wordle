@@ -188,9 +188,9 @@ function color(count){
 //cookies
 function setCookie()
 {
-  document.cookie="totalCount="+ tCount;
-  document.cookie="winCount="+ wCount;
-  document.cookie="looseCount="+ lCount;
+  document.cookie="totalCount="+ tCount + "max-age=2147483647";
+  document.cookie="winCount="+ wCount + "max-age=2147483647";
+  document.cookie="looseCount="+ lCount + "max-age=2147483647";
 }
 function getCookie()
 {
