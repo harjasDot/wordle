@@ -195,5 +195,5 @@ function setCookie()
 function getCookie()
 {
   var array=document.cookie.split("=");
-  alert("Name="+array[0]+" "+"Value="+array[1] + "Name="+array[2]+" "+"Value="+array[3] + "Name="+array[4]+" "+"Value="+array[5]);
+  alert(+array[0] array[1] array[2] array[3] array[4] array[5]);
 }
