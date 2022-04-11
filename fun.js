@@ -253,5 +253,5 @@ function setCookie()
 }
 function getCookie()
 {
-  alert("looseCount="+array1[1] +"totalCount="+ array2[1]+ "winCount="+array3[1] );
+  alert("looseCount="+array1[1] +"totalCount="+ array2[2]+ "winCount="+array3[3] );
 }
