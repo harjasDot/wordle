@@ -11,7 +11,10 @@ let tCount=0;
 let lCount=0;
 let wCount=0;
 let flag=false;
-let array,a1,a2,a3
+let array;
+let a1=0;
+let a2=0;
+let a3=0;
 if(document.cookie.length==0){
   setCookie();
   getCookie();
